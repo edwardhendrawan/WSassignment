@@ -4,6 +4,7 @@
 	<poll>
 		<id>99999</id>
 		<title>WSD Meeting</title>
+		<state>Open</state>
 		<name>Ryan Heise</name>
 		<datecreated>88/88/1996</datecreated>
 		<location>UTS</location>
@@ -21,6 +22,7 @@
 	</poll>
 	<poll>
 		<id>99999</id>
+		<state>Closed</state>
 		<title>WSD Meeting</title>
 		<name>Ryan Heise</name>
 		<datecreated>88/88/1996</datecreated>
