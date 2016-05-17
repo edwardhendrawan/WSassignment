@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<diary xmlns="uts.wsd.polls" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="polls.xsd">
+	<polls>
+		<poll>
+			<id>99999</id>
+			<title>WSD Meeting</title>
+			<name>Ryan Heise</name>
+			<datecreated>88/88/1996</datecreated>
+			<location>UTS</location>
+			<description>Meeting for assignment</description>
+			<meetings>
+				<meeting>
+					<time>12:00 99/88/1996</time>
+					<responses>15</responses>
+				</meeting>
+				<meeting>
+					<time>12:15 99/88/2005</time>
+					<responses>10</responses>
+				</meeting>
+			</meetings>
+		</poll>
+		<poll>
+			<id>99999</id>
+			<title>WSD Meeting</title>
+			<name>Ryan Heise</name>
+			<datecreated>88/88/1996</datecreated>
+			<location>UTS</location>
+			<description>Meeting for assignment</description>
+			<meetings>
+				<meeting>
+					<time>12:00 99/88/1996</time>
+					<responses>15</responses>
+				</meeting>
+				<meeting>
+					<time>12:15 99/88/2005</time>
+					<responses>10</responses>
+				</meeting>
+			</meetings>
+		</poll>
+	</polls>
