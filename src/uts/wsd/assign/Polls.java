@@ -25,7 +25,7 @@ public class Polls implements Serializable {
 	public Poll fetchPoll(int id) {
 		// For each user in the list...
 		for (Poll poll : polls) {
-			if (poll.getId()==id)
+			if (poll.getID()==id)
 				return poll; // Login correct. Return this user.
 		}
 		return null; // Login incorrect. Return null.

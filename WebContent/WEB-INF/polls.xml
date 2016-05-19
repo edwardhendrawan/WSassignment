@@ -4,7 +4,7 @@
 	<poll id="1">
 		<title>WSD Meeting</title>
 		<state>Open</state>
-		<name>Ryan Heise</name>
+		<userID>1</userID>
 		<datecreated>88/88/1996</datecreated>
 		<location>UTS</location>
 		<description>Meeting for assignment</description>
@@ -30,7 +30,7 @@
 	<poll id="2">
 		<state>Closed</state>
 		<title>WSD Meeting</title>
-		<name>Ryan Heise</name>
+		<userID>1</userID>
 		<datecreated>88/88/1996</datecreated>
 		<location>UTS</location>
 		<description>Meeting for assignment</description>
