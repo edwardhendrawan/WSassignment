@@ -8,82 +8,55 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User implements Serializable {
+	@XmlAttribute
+	private int ID;
+	private String name;
 	private String email;
-	@XmlElement(name="name")
-	private String fullname;
 	private String password;
-	private String gender;
-	@XmlElement(name="favouriteColour")
-	private String favcol;
-
-	
 	
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public User(String email, String fullname, String password, String gender,
-			String favcol) {
+	public User(int iD, String name, String email, String password) {
 		super();
-		this.fullname = fullname;
-		this.password = password;
-		this.favcol = favcol;
-		this.gender = gender;
+		ID = iD;
+		this.name = name;
 		this.email = email;
-	}
-
-
-	public String getFullname() {
-		return fullname;
-	}
-
-
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(String password) {
 		this.password = password;
 	}
 
-
-	public String getFavcol() {
-		return favcol;
+	public int getID() {
+		return ID;
 	}
 
-
-	public void setFavcol(String favcol) {
-		this.favcol = favcol;
+	public void setID(int iD) {
+		ID = iD;
 	}
 
-
-	public String getGender() {
-		return gender;
+	public String getName() {
+		return name;
 	}
 
-
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setName(String name) {
+		this.name = name;
 	}
-
 
 	public String getEmail() {
 		return email;
 	}
 
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 }

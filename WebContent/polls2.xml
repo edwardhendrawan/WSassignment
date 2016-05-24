@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="polltest.xsl"?>
+<polls xmlns="uts.wsd.assign1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="polls.xsd">
+	<poll id='1'>
+		<title>WSD Meeting</title>
+		<state>Open</state>
+		<userID>1</userID>
+		<datecreated>88/88/1996</datecreated>
+		<location>UTS</location>
+		<description>Meeting for assignment</description>
+		<meetings>
+			<meeting>
+				<time>12:00</time>
+				<date>99/88/1996</date>
+				<responses>
+					<response avail="yes">John Doe</response>
+					<response avail="no">John Smith</response>
+				</responses>
+			</meeting>
+			<meeting>
+				<time>12:00</time>
+				<date>99/88/1996</date>
+				<responses>
+					<response avail="yes">John Doe</response>
+					<response avail="no">John Smith</response>
+				</responses>
+			</meeting>
+		</meetings>
+	</poll>
+	<poll id='2'>
+		<state>Closed</state>
+		<title>WSD Meeting</title>
+		<userID>1</userID>
+		<datecreated>88/88/1996</datecreated>
+		<location>UTS</location>
+		<description>Meeting for assignment</description>
+		<meetings>
+			<meeting>
+				<time>12:00</time>
+				<date>99/88/1996</date>
+				<responses>
+					<response avail="yes">John Doe</response>
+					<response avail="no">John Smith</response>
+				</responses>
+			</meeting>
+			<meeting>
+				<time>12:00</time>
+				<date>99/88/1996</date>
+				<responses>
+					<response avail="yes">John Doe</response>
+					<response avail="no">John Smith</response>
+				</responses>
+			</meeting>
+		</meetings>
+	</poll>
+</polls>

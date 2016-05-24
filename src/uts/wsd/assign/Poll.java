@@ -17,7 +17,7 @@ public class Poll implements Serializable {
 	private String dateCreated;
 	private String location;
 	private String description;
-	//private ArrayList<Meeting> Meetings = new ArrayList<Meeting>;
+	private ArrayList<Meeting> Meetings = new ArrayList<Meeting>();
 
 	public Poll() {
 		super();

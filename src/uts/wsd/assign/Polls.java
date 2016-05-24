@@ -5,7 +5,8 @@ import java.util.*;
 import java.io.Serializable;
 
 import javax.xml.bind.annotation.*;
-
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Polls implements Serializable {
 	@XmlElement(name = "poll")
 	private ArrayList<Poll> polls = new ArrayList<Poll>();
