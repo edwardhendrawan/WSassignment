@@ -15,7 +15,6 @@
 <jsp:useBean id="webApp" class="uts.wsd.assign.WebApplication"
 	scope="application">
 	<jsp:setProperty name="webApp" property="load" value="<%=filePath%>"/>
-	<jsp:setProperty name = "webApp" property="load2"= value="<%=filePath2%>"/>
 </jsp:useBean>
 
 <title>Login</title>
