@@ -6,10 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <%
 	User user = (User)session.getAttribute("user");
-	String filePath = application.getRealPath("WEB-INF/polls2.xml");
+	String filePath = application.getRealPath("WEB-INF/polls.xml");
 	
 %>
-<jsp:useBean id="meetApp" class="uts.wsd.assign.MeetingApplication"
+<jsp:useBean id="WebApp" class="uts.wsd.assign.WebApplication"
 	scope="application">
 </jsp:useBean>
 

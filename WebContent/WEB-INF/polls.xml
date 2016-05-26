@@ -20,8 +20,8 @@
 				<time>12:00</time>
 				<date>99/88/1996</date>
 				<responses>
-					<response avail="yes">John Doe</response>
-					<response avail="no">John Smith</response>
+					<response>John Doe</response>
+					<response>John Smith</response>
 				</responses>
 			</meeting>
 		</meetings>

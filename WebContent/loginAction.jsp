@@ -10,10 +10,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%
 	String filePath = application.getRealPath("WEB-INF/users.xml");
+	String filePath2 = application.getRealPath("WEB-INF/polls.xml");
 %>
 <jsp:useBean id="webApp" class="uts.wsd.assign.WebApplication"
 	scope="application">
-	<jsp:setProperty name="webApp" property="load" value="<%=filePath%>" />
+	<jsp:setProperty name="webApp" property="load" value="<%=filePath%>"/>
+	<jsp:setProperty name = "webApp" property="load2"= value="<%=filePath2%>"/>
 </jsp:useBean>
 
 <title>Login</title>
