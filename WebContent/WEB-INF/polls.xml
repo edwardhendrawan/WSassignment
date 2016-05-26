@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<polls xmlns="uts.wsd.assign1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<polls xmlns="uts.wsd.assign" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="polls.xsd">
 	<poll id="1">
 		<title>WSD Meeting</title>
@@ -9,15 +9,14 @@
 		<location>UTS</location>
 		<description>Meeting for assignment</description>
 		<meetings>
-			<meeting>
+			<meeting option ='1'>
 				<time>12:00</time>
 				<date>99/88/1996</date>
 				<responses>
-					<response avail="yes">John Doe</response>
-					<response avail="no">John Smith</response>
+					<response>John Doe</response>
 				</responses>
 			</meeting>
-			<meeting>
+			<meeting option ='1'>
 				<time>12:00</time>
 				<date>99/88/1996</date>
 				<responses>

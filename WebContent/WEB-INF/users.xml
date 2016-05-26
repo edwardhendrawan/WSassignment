@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<users xmlns="uts.wsd.assign1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="users.xsd">
-	<user id="1">
-		<name>Ryan Heise</name>
-		<email>ryan@ryan.com</email>
-		<password>test</password>
-	</user>
-		<user id="2">
-		<name>Ryan john</name>
-		<email>ryan@johns.com</email>
-		<password>login</password>
-	</user>
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user>
+        <email>ryan@ryan.com</email>
+        <name>Ryan Heise</name>
+        <password>test</password>
+    </user>
+    <user>
+        <email>joe@bloggs.com</email>
+        <name>Joe Bloggs</name>
+        <password>foobar</password>
+    </user>
 </users>

@@ -5,33 +5,20 @@ import java.io.Serializable;
 import java.util.*;
 
 import javax.xml.bind.annotation.*;
-
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Response {
-	@XmlAttribute
-	private int avail;
 	private String name;
 	
 	public Response () {
 		super();
 	}
-	
-	
 
-	public Response(int avail, String name) {
+	public Response(String name) {
 		super();
-		this.avail = avail;
 		this.name = name;
 	}
 
-
-
-	public int getAvail() {
-		return avail;
-	}
-
-	public void setAvail(int avail) {
-		this.avail = avail;
-	}
 
 	public String getName() {
 		return name;

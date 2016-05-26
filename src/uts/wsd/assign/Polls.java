@@ -5,13 +5,17 @@ import java.util.*;
 import java.io.Serializable;
 
 import javax.xml.bind.annotation.*;
-@XmlRootElement
+@XmlRootElement(name="polls")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Polls implements Serializable {
 	@XmlElement(name = "poll")
 	private ArrayList<Poll> polls = new ArrayList<Poll>();
 
-	public ArrayList<Poll> getList() {
+	public Polls() {
+		super();
+	}
+
+	public ArrayList<Poll> getPolls() {
 		return polls;
 	}
 
@@ -27,6 +31,14 @@ public class Polls implements Serializable {
 		// For each user in the list...
 		for (Poll poll : polls) {
 			if (poll.getID()==id)
+				return poll; // Login correct. Return this user.
+		}
+		return null; // Login incorrect. Return null.
+	}
+	public Poll fetchUserPoll(int id) {
+		// For each user in the list...
+		for (Poll poll : polls) {
+			if (poll.getUserID()==id)
 				return poll; // Login correct. Return this user.
 		}
 		return null; // Login incorrect. Return null.

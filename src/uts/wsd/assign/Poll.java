@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Poll implements Serializable {
-
+	@XmlAttribute
 	private int ID;
 	private String title;
 	private int state;
@@ -17,21 +17,43 @@ public class Poll implements Serializable {
 	private String dateCreated;
 	private String location;
 	private String description;
-	private ArrayList<Meeting> Meetings = new ArrayList<Meeting>();
+//	@XmlElement(name = "meetings")
+//	private ArrayList<Meeting> meetings = new ArrayList<Meeting>();
 
 	public Poll() {
 		super();
 	}
 
-	public Poll(String title, int state, int userID, String dateCreated, String location, String description) {
-		super();
-		this.title = title;
-		this.state = state;
-		this.userID = userID;
-		this.dateCreated = dateCreated;
-		this.location = location;
-		this.description = description;
-	}
+
+public Poll(int iD, String title, int state, int userID, String dateCreated, String location, String description) {
+	super();
+	ID = iD;
+	this.title = title;
+	this.state = state;
+	this.userID = userID;
+	this.dateCreated = dateCreated;
+	this.location = location;
+	this.description = description;
+}
+
+
+
+
+
+//	public ArrayList<Meeting> getMeetings() {
+//		return meetings;
+//	}
+//
+//	public void setMeetings(ArrayList<Meeting> meetings) {
+//		this.meetings = meetings;
+//	}
+
+	@Override
+public String toString() {
+	return "Poll [ID=" + ID + ", title=" + title + ", state=" + state + ", userID=" + userID + ", dateCreated="
+			+ dateCreated + ", location=" + location + ", description=" + description + "]";
+}
+
 
 	public String getTitle() {
 		return title;
@@ -93,4 +115,7 @@ public class Poll implements Serializable {
 		state = 0;
 	}
 	
+//	public void addMeeting(){
+//		meetings.add(new Meeting(1, "1", "1/1/2"));
+//	}
 }

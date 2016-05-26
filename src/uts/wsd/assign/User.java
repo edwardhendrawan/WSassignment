@@ -16,7 +16,6 @@ public class User implements Serializable {
 	
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public User(int iD, String name, String email, String password) {
@@ -58,5 +57,8 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
+	public String toString() {
+		return "User [name=" + name + "]";
+	}
 }
