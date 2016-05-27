@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<users>
-    <user>
+<users xmlns="assign1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation=" assign1 users.xsd">
+    <user id='1'>
         <email>ryan@ryan.com</email>
         <name>Ryan Heise</name>
         <password>test</password>
     </user>
-    <user>
+    <user id='2'>
         <email>joe@bloggs.com</email>
         <name>Joe Bloggs</name>
         <password>foobar</password>
+    </user>
+        <user id = '3'>
+        <email>man@man.com</email>
+        <name>man</name>
+        <password>lol</password>
     </user>
 </users>

@@ -1,53 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<polls xmlns="uts.wsd.assign" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="polls.xsd">
+<polls xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="assign1"
+	xsi:schemaLocation=" assign1 polls.xsd">
 	<poll id="1">
 		<title>WSD Meeting</title>
-		<state>Open</state>
+		<state>1</state>
 		<userID>1</userID>
 		<datecreated>88/88/1996</datecreated>
 		<location>UTS</location>
 		<description>Meeting for assignment</description>
 		<meetings>
-			<meeting option ='1'>
+				<meeting option='1'>
 				<time>12:00</time>
 				<date>99/88/1996</date>
 				<responses>
-					<response>John Doe</response>
-				</responses>
-			</meeting>
-			<meeting option ='1'>
-				<time>12:00</time>
-				<date>99/88/1996</date>
-				<responses>
-					<response>John Doe</response>
-					<response>John Smith</response>
 				</responses>
 			</meeting>
 		</meetings>
 	</poll>
 	<poll id="2">
-		<state>Closed</state>
 		<title>WSD Meeting</title>
-		<userID>1</userID>
+		<state>0</state>
+		<userID>2</userID>
 		<datecreated>88/88/1996</datecreated>
 		<location>UTS</location>
-		<description>Meeting for assignment</description>
+		<description>Meeting for ssss</description>
 		<meetings>
-			<meeting>
+			<meeting option='1'>
 				<time>12:00</time>
 				<date>99/88/1996</date>
 				<responses>
-					<response avail="yes">John Doe</response>
-					<response avail="no">John Smith</response>
 				</responses>
 			</meeting>
-			<meeting>
+			<meeting option='2'>
 				<time>12:00</time>
 				<date>99/88/1996</date>
 				<responses>
-					<response avail="yes">John Doe</response>
-					<response avail="no">John Smith</response>
+					<response>John Doe</response>
+					<response>John Smith</response>
 				</responses>
 			</meeting>
 		</meetings>

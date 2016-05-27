@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<polls xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="assign1"
+	xsi:schemaLocation=" assign1 polls.xsd">
+	
+</polls>
