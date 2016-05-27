@@ -9,6 +9,7 @@
               <xs:element type="xs:string" name="name"/>
               <xs:element type="xs:string" name="password"/>
             </xs:sequence>
+            <xs:attribute type="xs:int" name="id" use="required"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>

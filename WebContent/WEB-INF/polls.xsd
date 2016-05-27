@@ -14,7 +14,7 @@
               <xs:element type="xs:string" name="location"/>
               <xs:element type="xs:string" name="description"/>
               <xs:element name="meetings">
-                <xs:complexType mixed="true">
+                <xs:complexType>
                   <xs:sequence>
                     <xs:element name="meeting" maxOccurs="unbounded" minOccurs="1">
                       <xs:complexType>
@@ -22,7 +22,7 @@
                           <xs:element type="xs:string" name="time"/>
                           <xs:element type="xs:string" name="date"/>
                           <xs:element name="responses">
-                            <xs:complexType mixed="true">
+                            <xs:complexType>
                               <xs:sequence>
                                 <xs:element type="xs:string" name="response" maxOccurs="unbounded" minOccurs="0"/>
                               </xs:sequence>
