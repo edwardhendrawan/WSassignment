@@ -4,46 +4,58 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<%
-	User user = (User)session.getAttribute("user");
-	String filePath = application.getRealPath("WEB-INF/polls.xml");
-%>
 <jsp:useBean id="webApp" class="uts.wsd.assign.WebApplication"
 	scope="application">
 </jsp:useBean>
 
-<title>Account</title>
+<%
+	User user = (User) session.getAttribute("user");
+	String filePath = application.getRealPath("WEB-INF/polls.xml");
+	webApp.setLoadPolls(filePath);
+	Polls polls = webApp.getPolls();
+	session.setAttribute("polls", polls);
+	List<Poll> test = polls.fetchUserPolls(user.getID());
+
+%>
+
+
+<title><%=user.getName()%>'s Account</title>
 <%
 
-webApp.setLoadPolls(filePath);
-Polls polls = webApp.getPolls();
-session.setAttribute("polls", polls); 
-List<Poll> test = polls.fetchUserPolls(user.getID());
-String poll = request.getParameter("poll");
-if(poll!=null){
-int polltoclose = Integer.parseInt(poll);
-polls.fetchPoll(polltoclose).closePoll();
-}
-webApp.savePolls(filePath);
 %>
 
 
 </head>
-<body style="background-color:lightblue">
-<form action="account.jsp" method="post">
-Your open polls are:<br/>
-<%for(Poll p: test){if (p.getState()==1){%>
+<body style="background-color: lightblue; text-align: center">
 
-	<%=p.getTitle()%>   <input type="radio" value="<%=p.getId()%>" name="poll"><br/>
+	<h1><%=user.getName()%></h1>
+<form method="get" action="logout.jsp">
+    <button type="submit">Logout</button>
+</form><br>
+
+
+	<form action="pollview.jsp" method="post">
+
+		<%
+			if (!test.isEmpty()) {
+		%>
+		Your polls are:<br>
+		<%
+			for (Poll p : test) {		
+		%>
+
+		<%=p.getTitle()%>  --  <%=p.getActualState() %>
+		<input type="radio" value="<%=p.getId()%>" <%if(p == test.get(0)){ %> checked="checked" <%}%> name="poll"/><br>
+
+		<%}%>
+		<br><input type="submit" value="View Poll" /> 
+
 	
-<%}}%>
-<input type="submit" value="Close Poll"><input type="submit" value="View Poll">
-<br/>Your closed polls are:<br/>
-<%for(Poll p: test){if (p.getState()==0){%>
+		<%} else {%>
+		You have no polls
+		<%}%>
+	</form>
+	
 
-<%=p.getTitle()%>
-
-<%;}}%>
-</form>
 </body>
 </html>

@@ -18,7 +18,7 @@
 
 <title>Login</title>
 </head>
-<body style="background-color: lightblue">
+<body style="background-color: lightblue; text-align:center">
 	<%
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");

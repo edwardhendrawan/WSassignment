@@ -5,12 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
+<%session.invalidate(); %>
 </head>
-<body style="background-color:lightblue">
+<body style="background-color:lightblue; text-align:center">
 	<h1>Login</h1>
 	<form action="loginAction.jsp" method="post">
 
-		<table>
+		<table align="center">
 			<tbody>
 				<tr> 
 					<td><label for="email">Email</label></td>
