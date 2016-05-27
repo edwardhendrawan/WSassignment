@@ -17,16 +17,33 @@
 
 webApp.setLoadPolls(filePath);
 Polls polls = webApp.getPolls();
+session.setAttribute("polls", polls); 
 List<Poll> test = polls.fetchUserPolls(user.getID());
+String poll = request.getParameter("poll");
+if(poll!=null){
+int polltoclose = Integer.parseInt(poll);
+polls.fetchPoll(polltoclose).closePoll();
+}
+webApp.savePolls(filePath);
 %>
 
 
 </head>
-<body>
-<%for(Poll poll: test){%>
-Your polls are
-	<%=poll.getTitle()%>
-<%;} %>
+<body style="background-color:lightblue">
+<form action="account.jsp" method="post">
+Your open polls are:<br/>
+<%for(Poll p: test){if (p.getState()==1){%>
 
+	<%=p.getTitle()%>   <input type="radio" value="<%=p.getId()%>" name="poll"><br/>
+	
+<%}}%>
+<input type="submit" value="Close Poll"><input type="submit" value="View Poll">
+<br/>Your closed polls are:<br/>
+<%for(Poll p: test){if (p.getState()==0){%>
+
+<%=p.getTitle()%>
+
+<%;}}%>
+</form>
 </body>
 </html>
