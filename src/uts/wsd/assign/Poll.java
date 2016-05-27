@@ -5,7 +5,6 @@
 // Generated on: 2016.05.27 at 02:46:00 PM AEST 
 //
 
-
 package uts.wsd.assign;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,7 +12,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-
 
 /**
  * <p>Java class for anonymous complex type.
@@ -75,217 +73,198 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "title",
-    "state",
-    "userID",
-    "datecreated",
-    "location",
-    "description",
-    "meetings"
-})
+@XmlType(name = "", propOrder = { "title", "state", "userID", "datecreated", "location", "description", "meetings" })
 public class Poll {
 
-    @XmlElement(required = true)
-    protected String title;
-    protected int state;
-    protected int userID;
-    @XmlElement(required = true)
-    protected String datecreated;
-    @XmlElement(required = true)
-    protected String location;
-    @XmlElement(required = true)
-    protected String description;
-    @XmlElement(required = true)
-    protected Meetings meetings;
-    @XmlAttribute(name = "id")
-    protected Integer id;
+	@XmlElement(required = true)
+	protected String title;
+	protected int state;
+	protected int userID;
+	@XmlElement(required = true)
+	protected String datecreated;
+	@XmlElement(required = true)
+	protected String location;
+	@XmlElement(required = true)
+	protected String description;
+	@XmlElement(required = true)
+	protected Meetings meetings;
+	@XmlAttribute(name = "id")
+	protected Integer id;
 
-    /**
-     * Gets the value of the title property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTitle() {
-        return title;
-    }
+	/**
+	 * Gets the value of the title property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getTitle() {
+		return title;
+	}
 
-    /**
-     * Sets the value of the title property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTitle(String value) {
-        this.title = value;
-    }
+	/**
+	 * Sets the value of the title property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setTitle(String value) {
+		this.title = value;
+	}
 
-    /**
-     * Gets the value of the state property.
-     * 
-     */
-    public int getState() {
-        return state;
-    }
+	/**
+	 * Gets the value of the state property.
+	 * 
+	 */
+	public int getState() {
+		return state;
+	}
 
-    /**
-     * Sets the value of the state property.
-     * 
-     */
-    public void setState(int value) {
-        this.state = value;
-    }
+	/**
+	 * Sets the value of the state property.
+	 * 
+	 */
+	public void setState(int value) {
+		this.state = value;
+	}
 
-    /**
-     * Gets the value of the userID property.
-     * 
-     */
-    public int getUserID() {
-        return userID;
-    }
+	/**
+	 * Gets the value of the userID property.
+	 * 
+	 */
+	public int getUserID() {
+		return userID;
+	}
 
-    /**
-     * Sets the value of the userID property.
-     * 
-     */
-    public void setUserID(int value) {
-        this.userID = value;
-    }
+	/**
+	 * Sets the value of the userID property.
+	 * 
+	 */
+	public void setUserID(int value) {
+		this.userID = value;
+	}
 
-    /**
-     * Gets the value of the datecreated property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDatecreated() {
-        return datecreated;
-    }
+	/**
+	 * Gets the value of the datecreated property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getDatecreated() {
+		return datecreated;
+	}
 
-    /**
-     * Sets the value of the datecreated property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDatecreated(String value) {
-        this.datecreated = value;
-    }
+	/**
+	 * Sets the value of the datecreated property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setDatecreated(String value) {
+		this.datecreated = value;
+	}
 
-    /**
-     * Gets the value of the location property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLocation() {
-        return location;
-    }
+	/**
+	 * Gets the value of the location property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getLocation() {
+		return location;
+	}
 
-    /**
-     * Sets the value of the location property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLocation(String value) {
-        this.location = value;
-    }
+	/**
+	 * Sets the value of the location property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setLocation(String value) {
+		this.location = value;
+	}
 
-    /**
-     * Gets the value of the description property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDescription() {
-        return description;
-    }
+	/**
+	 * Gets the value of the description property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getDescription() {
+		return description;
+	}
 
-    /**
-     * Sets the value of the description property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
+	/**
+	 * Sets the value of the description property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setDescription(String value) {
+		this.description = value;
+	}
 
-    /**
-     * Gets the value of the meetings property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Meetings }
-     *     
-     */
-    public Meetings getMeetings() {
-        return meetings;
-    }
+	/**
+	 * Gets the value of the meetings property.
+	 * 
+	 * @return possible object is {@link Meetings }
+	 * 
+	 */
+	public Meetings getMeetings() {
+		return meetings;
+	}
 
-    /**
-     * Sets the value of the meetings property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Meetings }
-     *     
-     */
-    public void setMeetings(Meetings value) {
-        this.meetings = value;
-    }
+	/**
+	 * Sets the value of the meetings property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Meetings }
+	 * 
+	 */
+	public void setMeetings(Meetings value) {
+		this.meetings = value;
+	}
 
-    /**
-     * Gets the value of the id property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getId() {
-        return id;
-    }
+	/**
+	 * Gets the value of the id property.
+	 * 
+	 * @return possible object is {@link Integer }
+	 * 
+	 */
+	public Integer getId() {
+		return id;
+	}
 
-    /**
-     * Sets the value of the id property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setId(Integer value) {
-        this.id = value;
-    }
-    
+	/**
+	 * Sets the value of the id property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Integer }
+	 * 
+	 */
+	public void setId(Integer value) {
+		this.id = value;
+	}
+
 	public void closePoll() {
 		state = 0;
 	}
 
-	@Override
-	public String toString() {
-		return "Poll [Title=" + title + ", state=" + state + ", userID=" + userID + ", datecreated=" + datecreated
-				+ ", location=" + location + ", description=" + description + ", id=" + id + "]";
+	public String getActualState()
+	{
+		if (state == 1) {
+			return "Open";
+		} else {
+			return "Closed";
+		}
 	}
-	
+
+	public String toString() {
+		return getActualState() + "\n" + "\n Date Created:" + datecreated + "\n Location:" + location
+				+ "\n" + description ;
+	}
 
 }
