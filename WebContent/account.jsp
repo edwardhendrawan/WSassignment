@@ -7,17 +7,26 @@
 <%
 	User user = (User)session.getAttribute("user");
 	String filePath = application.getRealPath("WEB-INF/polls.xml");
-	
+	String filePath2 = application.getRealPath("WEB-INF/polls2.xml");
 %>
-<jsp:useBean id="WebApp" class="uts.wsd.assign.WebApplication"
+<jsp:useBean id="webApp" class="uts.wsd.assign.WebApplication"
 	scope="application">
 </jsp:useBean>
 
 <title>Account</title>
+<%
+
+webApp.setLoadPolls(filePath);
+Polls polls = webApp.getPolls();
+webApp.savePolls(filePath2);
+%>
+
+<%=filePath2 %>
+
 </head>
 <body>
-Your polls are 
 
+Your polls are <%=polls.getPoll().get(0).getDatecreated() %>
 
 </body>
 </html>

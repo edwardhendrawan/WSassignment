@@ -10,7 +10,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%
 	String filePath = application.getRealPath("WEB-INF/users.xml");
-	String filePath2 = application.getRealPath("WEB-INF/polls.xml");
 %>
 <jsp:useBean id="webApp" class="uts.wsd.assign.WebApplication"
 	scope="application">
@@ -30,8 +29,7 @@
 			session.setAttribute("user", user);
 	%>
 	<p>
-		Login Successful. Click <a href="index.jsp">here</a> to return to the
-		main page.
+		Login Successful. Click <a href="account.jsp">here</a> to go your account.
 	</p>
 
 

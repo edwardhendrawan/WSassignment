@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.*;
 
 import javax.xml.bind.annotation.*;
+
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User implements Serializable {
 	@XmlAttribute
