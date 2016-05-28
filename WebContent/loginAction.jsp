@@ -23,8 +23,7 @@
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		User user = webApp.getUsers().login(email, password);
-	%>
-	<%
+	
 		if (user != null) {
 			session.setAttribute("user", user);
 	%>

@@ -7,6 +7,8 @@
 
 package uts.wsd.assign;
 
+import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -74,7 +76,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = { "title", "state", "userID", "datecreated", "location", "description", "meetings" })
-public class Poll {
+public class Poll implements Serializable {
 
 	@XmlElement(required = true)
 	protected String title;
@@ -91,6 +93,20 @@ public class Poll {
 	@XmlAttribute(name = "id")
 	protected Integer id;
 
+	public Poll() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Poll(String title, int state, int userID , String dateCreated, String location, String description){
+		super();
+		this.title = title;
+		this.state = state;
+		this.userID = userID;
+		this.datecreated = dateCreated; 
+		this.location = location; 
+		this.description = description; 
+	}
+	
 	/**
 	 * Gets the value of the title property.
 	 * 

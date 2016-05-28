@@ -19,7 +19,7 @@
 </head>
 <body style="background-color: lightblue; text-align: center">
 <h1>Create Poll</h1>
-	<form method="post" action="createPollAction.jsp">
+	<form method="post" action="pickTimes.jsp">
 	<table align="center">
 			<tr>
 				<td>Poll Title</td>
@@ -33,28 +33,21 @@
 				<td>Description</td>
 				<td><input type="text" name="description"></td>
 			</tr>
-			
-
-
-
-	</table>
-	<h3>Meeting Times</h3>
-	<table align="center">
 			<tr>
-				<td>Meeting Date</td>
-				<td><input type="date" name="meetingDate"></td>
-			</tr>
-			<tr>
-				<td>Meeting Time</td>
-				<td><input type="time" name="meetingTime"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Add Meeting Time button?</td>
+				<td>Amount of Meeting Times</td>
+				<td><select name="MTimes">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="4">5</option>
+</select>
+</td>
 			</tr>
 			
 		</table>	
+<button type="submit" align="center">Pick meeting times</button>
 	</form>
-<button type="submit" align="center">Create Poll</button>
+
 </body>
  

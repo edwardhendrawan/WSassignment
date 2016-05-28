@@ -36,7 +36,7 @@
 		<%
 			if (!test.isEmpty()) {
 		%>
-		Your polls are:<br>
+		<br> Your polls are:<br>
 		<%
 			for (Poll p : test) {		
 		%>
@@ -53,7 +53,6 @@
 		<%}%>
 	</form>
 	
-	<a>
 
 </body>
 </html>
