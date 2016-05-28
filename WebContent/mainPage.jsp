@@ -30,7 +30,7 @@
 
 	<h1>Main</h1>
 
-</form><br>
+<br>
 <form method="get" action="login.jsp">
     <button type="submit">Login</button>
 </form><br>

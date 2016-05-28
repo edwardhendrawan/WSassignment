@@ -52,12 +52,13 @@
 
 
 <table align="center" style=" border-spacing: 15px;">
+<tr>
 <%
 int i = 0;
 for(Meeting a: currentMeetings) {
 i++;
 %>
-<td style="float: left;">
+<td style="float: left;padding: 0 10px 0 10px;">
 <u> <b>Meetup Time - <%=i %></b></u><br>
 <b> Date: </b><%=a.getDate() %><br>
 <b> Time: </b><%=a.getTime() %><br>
@@ -75,17 +76,47 @@ i++;
 
 <%}%></ul><br><%}%>
 </td>
+</tr>
 </table>
+
+<%if(user == null){ %>
+<form method="get" action="votePoll.jsp">
+<h3>Vote for Time</h3>
+<table align="center">
+<tr>
+<td>
+Meeting Time
+</td>
+<td>
+<select name="time" style="width:100%;text-align:center;">
+<%for(int j=1; j<i+1 ;j++ ){%>
+ <option value="<%=j%>"><%=j%></option>
+<%}%>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+Your Name
+</td>
+<td>
+<input type="text" name="yourName">
+</td>
+</tr>
+</table>
+<button type="submit">Vote!</button>
+</form>
+<% } %>
+
+
+
 <%if(user != null){
 	if(user.getID() == current.getUserID()){%>
 		<%if(current.getState()== 1){ %>
-<form method="get" action="pollview.jsp">
-
-    <button type="submit" name="poll" onclick="<%current.closePoll();webApp.savePolls(filePath);%>" value="<%=current.getId()%>">Close Poll</button>
+<form method="get" action="closePollAction.jsp">
+	<input type="hidden" name="currentPoll" value="<%=current.getId()%>">
+    <button type="submit">Close Poll</button>
     </form><br>
 <% }}} %>
-
-
-
 </body>
 </html>
