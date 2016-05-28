@@ -9,6 +9,7 @@
 </jsp:useBean>
 
 <%
+	
 	String filePath = application.getRealPath("WEB-INF/polls.xml");
 	webApp.setLoadPolls(filePath);
 	Polls polls = webApp.getPolls();

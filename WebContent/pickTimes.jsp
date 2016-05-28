@@ -38,10 +38,10 @@
 <h1>Create Poll</h1>
 	<form method="post" action="createPollAction.jsp">
 	<%
-		for (int i = 0; i < MTimes; i++) {
+		for (int i = 1; i < MTimes + 1; i++) {
 	%>
 	<h1>Time - <%=i %></h1>
-	<table>
+	<table align="center">
 	<tr>
 				<td>Meeting Date</td>
 				<td><input type="date" name="meetingDate"></td>

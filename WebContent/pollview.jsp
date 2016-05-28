@@ -32,7 +32,8 @@
 		<form method="get" action="account.jsp">
     	<button type="submit">Back to account</button></form><br>
  		 
-<% }} else {%>
+	<% }
+} else {%>
 	<form method="get" action="mainPage.jsp">
     	<button type="submit">Back to Main</button></form>
 <%} %>
@@ -41,32 +42,47 @@
 
 <b> Date created: </b><%=current.getDatecreated() %><br>
 
-<b> Location: </b><%=current.getLocation() %><br><br>
-
-<u>Decription</u><br><%=current.getDescription() %><br><br>
+<b> Location: </b><%=current.getLocation() %><br>
 
 <b> Meetup Times: </b><%=currentMeetings.size()%><br><br>
 
+<u> <b>Decription </b></u><br><%=current.getDescription() %><br><br>
 
 
-<%for(Meeting a: currentMeetings) {%>
+
+
+<table align="center" style=" border-spacing: 15px;">
+<%
+int i = 0;
+for(Meeting a: currentMeetings) {
+i++;
+%>
+<td style="float: left;">
+<u> <b>Meetup Time - <%=i %></b></u><br>
 <b> Date: </b><%=a.getDate() %><br>
 <b> Time: </b><%=a.getTime() %><br>
 
+<%if(user != null){
+	if(user.getID() == current.getUserID()){%>
 <b> Reponses: </b> <%=a.getResponses().getResponse().size() %><br><br>
 <ul>
-
+<% }} %>
 
 <%for(String r:a.getResponses().getResponse()){ %>
 
 <li><%=r %></li>
+
+
 <%}%></ul><br><%}%>
+</td>
+</table>
 <%if(user != null){
-	if(user.getID() ==current.getUserID()){%>
-<%if(current.getState()== 1){ %>
+	if(user.getID() == current.getUserID()){%>
+		<%if(current.getState()== 1){ %>
 <form method="get" action="pollview.jsp">
 
-    <button type="submit" name="poll" onclick="<%current.closePoll();webApp.savePolls(filePath);%>" value="<%=current.getId()%>">Close Poll</button></form><br>
+    <button type="submit" name="poll" onclick="<%current.closePoll();webApp.savePolls(filePath);%>" value="<%=current.getId()%>">Close Poll</button>
+    </form><br>
 <% }}} %>
 
 
