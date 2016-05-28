@@ -12,14 +12,10 @@
 	User user = (User) session.getAttribute("user");
 	String filePath = application.getRealPath("WEB-INF/polls.xml");
 	webApp.setLoadPolls(filePath);
-	Polls polls = webApp.getPolls();
-	session.setAttribute("polls", polls);
-	List<Poll> test = polls.fetchUserPolls(user.getID());
-
 %>
 
+<title>Create Poll</title>
 
-<title><%=user.getName()%>'s Account</title>
 </head>
 <body style="background-color: lightblue; text-align: center">
 
@@ -29,31 +25,3 @@
 </form><br>
 	<form method="get" action="createPoll.jsp">
    <button type="submit">Create Poll</button> <br>
-
-
-	<form action="pollview.jsp" method="post">
-
-		<%
-			if (!test.isEmpty()) {
-		%>
-		Your polls are:<br>
-		<%
-			for (Poll p : test) {		
-		%>
-
-		<%=p.getTitle()%>  --  <%=p.getActualState() %>
-		<input type="radio" value="<%=p.getId()%>" <%if(p == test.get(0)){ %> checked="checked" <%}%> name="poll"/><br>
-
-		<%}%>
-		<br><input type="submit" value="View Poll" /> 
-
-	
-		<%} else {%>
-		You have no polls
-		<%}%>
-	</form>
-	
-	<a>
-
-</body>
-</html>

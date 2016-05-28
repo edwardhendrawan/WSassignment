@@ -139,4 +139,14 @@ public class Polls {
 		}
 		return temp;
 	}
+	public List<Poll> fetchOpenPolls() {
+		// For each user in the list...
+		List<Poll> temp = new ArrayList<Poll>();
+		for (Poll poll : poll) {
+			if (poll.getState() == 1){
+				temp.add(poll);
+			}
+		}
+		return temp;
+	}
 }

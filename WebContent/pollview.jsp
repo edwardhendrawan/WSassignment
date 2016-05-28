@@ -26,13 +26,19 @@
 </head>
 <body style="background-color: lightblue; text-align: center">
 <h1><%=current.getTitle() %></h1>
-<form method="get" action="account.jsp">
 
+<%if(user != null){
+	if(user.getID() == current.getUserID()){%>
+		<form method="get" action="account.jsp">
+    	<button type="submit">Back to account</button></form><br>
+ 		 
+<% }} else {%>
+	<form method="get" action="mainPage.jsp">
+    	<button type="submit">Back to Main</button></form>
+<%} %>
 
-    <button type="submit">Back to account</button></form><br>
-    
- <h3><%=current.getActualState() %></h3>   
- 
+<br><h3><%=current.getActualState()%></h3>  
+
 <b> Date created: </b><%=current.getDatecreated() %><br>
 
 <b> Location: </b><%=current.getLocation() %><br><br>
@@ -55,11 +61,13 @@
 
 <li><%=r %></li>
 <%}%></ul><br><%}%>
-<%if(current.getState()==1){ %>
+<%if(user != null){
+	if(user.getID() ==current.getUserID()){%>
+<%if(current.getState()== 1){ %>
 <form method="get" action="pollview.jsp">
 
     <button type="submit" name="poll" onclick="<%current.closePoll();webApp.savePolls(filePath);%>" value="<%=current.getId()%>">Close Poll</button></form><br>
-<%} %>
+<% }}} %>
 
 
 
