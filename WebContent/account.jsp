@@ -29,7 +29,7 @@
 </form><br>
 	<form method="get" action="createPoll.jsp">
    <button type="submit">Create Poll</button> <br>
-
+	</form>
 
 	<form action="pollview.jsp" method="post">
 

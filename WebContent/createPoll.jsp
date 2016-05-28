@@ -18,10 +18,43 @@
 
 </head>
 <body style="background-color: lightblue; text-align: center">
+<h1>Create Poll</h1>
+	<form method="post" action="createPollAction.jsp">
+	<table align="center">
+			<tr>
+				<td>Poll Title</td>
+				<td><input type="text" name="title"></td>
+			</tr>
+			<tr>
+				<td>Location</td>
+				<td><input type="text" name="location"></td>
+			</tr>
+			<tr>
+				<td>Description</td>
+				<td><input type="text" name="description"></td>
+			</tr>
+			
 
-	<h1><%=user.getName()%></h1>
-<form method="get" action="logout.jsp">
-    <button type="submit">Logout</button>
-</form><br>
-	<form method="get" action="createPoll.jsp">
-   <button type="submit">Create Poll</button> <br>
+
+
+	</table>
+	<h3>Meeting Times</h3>
+	<table align="center">
+			<tr>
+				<td>Meeting Date</td>
+				<td><input type="date" name="meetingDate"></td>
+			</tr>
+			<tr>
+				<td>Meeting Time</td>
+				<td><input type="time" name="meetingTime"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>Add Meeting Time button?</td>
+			</tr>
+			
+		</table>	
+	</form>
+<button type="submit" align="center">Create Poll</button>
+</body>
+ 

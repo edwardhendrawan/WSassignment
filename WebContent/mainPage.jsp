@@ -30,8 +30,9 @@
 	<h1>Main</h1>
 
 </form><br>
-
-
+<form method="get" action="login.jsp">
+    <button type="submit">Login</button>
+</form><br>
 	<form action="pollview.jsp" method="post">
 
 		<%
