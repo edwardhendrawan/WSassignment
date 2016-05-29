@@ -6,6 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
 <%session.invalidate(); %>
+<script type="text/javascript" src="jquery.validate.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$("#name").validator();
+</script>
 </head>
 <body style="background-color:lightblue; text-align:center">
 	<h1>Login</h1>
@@ -15,11 +20,11 @@
 			<tbody>
 				<tr> 
 					<td><label for="email">Email</label></td>
-					<td><input type="text" name="email" value=""></input></td>
+					<td><input type="email" name="email" value="" required></input></td>
 				</tr>
 				<tr>
 					<td><label for="password">Password</label></td>
-					<td><input type="password" name="password" value=""></input></td>
+					<td><input type="password" name="password" value="" required></input></td>
 				</tr>
 				<tr>
 					<td><label for=""></label></td>

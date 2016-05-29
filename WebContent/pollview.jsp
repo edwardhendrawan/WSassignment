@@ -7,6 +7,8 @@
 <jsp:useBean id="webApp" class="uts.wsd.assign.WebApplication"
 	scope="application">
 </jsp:useBean>
+<script type="text/javascript" src="jquery.validate.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
 <%
 	User user = (User) session.getAttribute("user");
 	Polls polls = webApp.getPolls();
@@ -19,12 +21,18 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title><%=current.getTitle()%></title>
+
 <style>
 ul {
 	display: table;
 	margin: 0 auto;
 }
 </style>
+
+<script type="text/javascript">
+	$("#name").validator();
+</script>
+
 </head>
 <body style="background-color: lightblue; text-align: center">
 	<h1><%=current.getTitle()%></h1>
@@ -78,7 +86,7 @@ ul {
 					Time: </b><%=a.getTime()%><br> <%
  	
  %> <b> Reponses: </b> <%=a.getResponses().getResponse().size()%><br>
-				
+
 				<ul>
 
 
@@ -102,32 +110,37 @@ ul {
 		if (user == null) {
 	%>
 	<form method="get" action="submitResponse.jsp">
-		<h3><u>Choose available times</u></h3>
+		<h3>
+			<u>Choose available times</u>
+		</h3>
 		<table align="center" cellpadding="5">
 			<tr>
 				<th>Meetings Times:</th>
 			</tr>
-			
-				<%
-					for (Meeting a : currentMeetings) {
-				%>
-				<tr><td><input type="checkbox" name="option"
-					value="<%=a.getOption()%>"> Option <%=a.getOption() %> - <%=a.getDate()%> <%=a.getTime()%><br>
-				</td></tr>
-				<%
-					}
-				%>
-				
-			
+
+			<%
+				for (Meeting a : currentMeetings) {
+			%>
+			<tr>
+				<td><input type="checkbox" name="option"
+					value="<%=a.getOption()%>"> Option <%=a.getOption()%> - <%=a.getDate()%>
+					<%=a.getTime()%><br></td>
+			</tr>
+			<%
+				}
+			%>
+
+
 			<tr>
 				<th>Enter Name:</th>
 			</tr>
 			<tr>
-				<td><input type="text" name="yourName" maxlength="30" required></td>
+				<td><input type="text" name="yourName" pattern="[a-zA-Z ]{5,}"
+					maxlength="30" required="required" placeholder="Minimum 5 Letters"></td>
 			</tr>
 		</table>
 		<input type="hidden" name="currentPoll" value="<%=current.getId()%>">
-		<button type="submit" >Submit</button>
+		<button type="submit">Submit</button>
 	</form>
 	<%
 		}
@@ -142,10 +155,12 @@ ul {
 	<%
 		if (current.getState() == 1) {
 	%>
-	<form method="post" action="closePollAction.jsp">
+	<form id="name" method="post" action="closePollAction.jsp">
 		<input type="hidden" name="currentPoll" value="<%=current.getId()%>">
-		<button type="submit" > Close Poll</button>
+		<button type="submit">Close Poll</button>
+
 	</form>
+
 	<br>
 	<%
 		}
