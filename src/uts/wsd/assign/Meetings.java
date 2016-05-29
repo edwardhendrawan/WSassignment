@@ -105,4 +105,13 @@ public class Meetings {
 	public void addMeeting(Meeting m){
     	meeting.add(m);
     }
+	
+	public Meeting getMeetingbyID(int ID){
+		for(Meeting m:meeting){
+			if(m.getOption() == ID ){
+				return m;
+			}
+		}
+		return null;
+	}
 }

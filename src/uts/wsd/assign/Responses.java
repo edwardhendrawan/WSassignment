@@ -79,6 +79,9 @@ public class Responses {
 	public Responses() {
 		// TODO Auto-generated constructor stub
 	}
+	public void addResponse(String name){
+		response.add(name);
+	}
     
 
 }

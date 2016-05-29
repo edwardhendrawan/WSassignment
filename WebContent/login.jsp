@@ -30,7 +30,7 @@
 
 	</form>
 
-<br><form method="get" action="mainPage.jsp">
+<br><form method="get" action="index.jsp">
     <button type="submit">Back to Main</button>
 </form><br>
 

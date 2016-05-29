@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <jsp:useBean id="webApp" class="uts.wsd.assign.WebApplication"
 	scope="application">
 </jsp:useBean>
@@ -14,8 +15,6 @@
 	int polltoview = Integer.parseInt(poll);
 	Poll current = polls.fetchPoll(polltoview);
 	List<Meeting> currentMeetings = current.getMeetings().getMeeting();
-	//current.closePoll();
-	//webApp.savePolls(filePath);
 %>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -43,7 +42,7 @@ ul {
 		}
 		} else {
 	%>
-	<form method="get" action="mainPage.jsp">
+	<form method="get" action="index.jsp">
 		<button type="submit">Back to Main</button>
 	</form>
 	<%
@@ -79,7 +78,7 @@ ul {
 					Time: </b><%=a.getTime()%><br> <%
  	
  %> <b> Reponses: </b> <%=a.getResponses().getResponse().size()%><br>
-			<br>
+				
 				<ul>
 
 
@@ -93,39 +92,42 @@ ul {
 					<%
 						}
 					%>
-				</ul>
-				<br>
-				<%
-					}
-				%></td>
+				</ul> <%
+ 	}
+ %></td>
 		</tr>
 	</table>
 
 	<%
 		if (user == null) {
 	%>
-	<form method="get" action="votePoll.jsp">
-		<h3>Vote for Time</h3>
-		<table align="center">
+	<form method="get" action="submitResponse.jsp">
+		<h3>Choose available Times</h3>
+		<table align="center" cellpadding="5">
 			<tr>
-				<td>Meeting Time</td>
-				<td><select name="time"
-					style="width: 100%; text-align: center;">
-						<%
-							for (int j = 1; j < i + 1; j++) {
-						%>
-						<option value="<%=j%>"><%=j%></option>
-						<%
-							}
-						%>
-				</select></td>
+				<th>Meetings Times:</th>
+			</tr>
+			
+				<%
+					for (Meeting a : currentMeetings) {
+				%>
+				<tr><td><input type="checkbox" name="option"
+					value="<%=a.getOption()%>"> Option <%=a.getOption() %> - <%=a.getDate()%> <%=a.getTime()%><br>
+				</td></tr>
+				<%
+					}
+				%>
+				
+			
+			<tr>
+				<th>Enter Name:</th>
 			</tr>
 			<tr>
-				<td>Your Name</td>
-				<td><input type="text" name="yourName"></td>
+				<td><input type="text" name="yourName" required></td>
 			</tr>
 		</table>
-		<button type="submit">Vote!</button>
+		<input type="hidden" name="currentPoll" value="<%=current.getId()%>">
+		<button type="submit" >Submit!</button>
 	</form>
 	<%
 		}
@@ -142,7 +144,7 @@ ul {
 	%>
 	<form method="post" action="closePollAction.jsp">
 		<input type="hidden" name="currentPoll" value="<%=current.getId()%>">
-		<button type="submit">Close Poll</button>
+		<button type="submit" > Close Poll</button>
 	</form>
 	<br>
 	<%

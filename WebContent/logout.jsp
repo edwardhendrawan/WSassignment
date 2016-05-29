@@ -9,6 +9,6 @@
 <body style="background-color:lightblue;text-align:center">
 
 <%session.invalidate(); %>
-You have been logged out. Click <a href='login.jsp'>here</a>  to return to loginpage.
+You have been logged out. Click <a href='index.jsp'>here</a>  to return to homepage.
 </body>
 </html>
