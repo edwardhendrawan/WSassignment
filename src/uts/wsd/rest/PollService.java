@@ -1,4 +1,6 @@
 package uts.wsd.rest;
+import uts.wsd.assign.*;
+import java.util.List;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
@@ -6,12 +8,12 @@ import javax.ws.rs.core.*;
 @Path("/pollservice")
 public class PollService 
 {
-	@Path("hello")
+	@Path("getOpenPolls")
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	
-	public String hello() 
+	public int getAllOpenPolls() 
 	{
-	   return "Hello World";
+		return 0;
 	}
 }

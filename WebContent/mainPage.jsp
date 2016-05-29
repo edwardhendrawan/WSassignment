@@ -34,6 +34,7 @@
 <form method="get" action="login.jsp">
     <button type="submit">Login</button>
 </form><br>
+
 	<form action="pollview.jsp" method="post">
 
 		<%
@@ -55,6 +56,15 @@
 		There are no polls
 		<%}%>
 	</form>
+
+<form action = "pollview.jsp" method = "post">
+	
+	<div id="restservice">
+	
+			
+	</div>
+	
+</form>
 	
 
 </body>
