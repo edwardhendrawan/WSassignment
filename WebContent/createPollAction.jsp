@@ -32,22 +32,10 @@
 		Poll poll = new Poll(title,1,userID,today,location,description);
 		webApp.savePolls(filePath);
 	%>
-	<%
-		if (poll != null) {
-	%>
+
 	<p>
 		Poll Created. Click <a href="account.jsp">here</a> to go your account.
 	</p>
 
-
-	<%
-		} else {
-	%>
-	<p>
-		Something went wrong. Click <a href="account.jsp">here</a> to try again.
-	</p>
-	<%
-		}
-	%>
 </body>
 </html>
