@@ -14,5 +14,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/cszilagy/workspace/jersey-bundle-1.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/cszilagy/workspace/asm-3.3.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
