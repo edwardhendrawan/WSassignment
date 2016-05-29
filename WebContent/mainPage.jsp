@@ -58,12 +58,9 @@
 		<%}%>
 	</form>
 
-<form action = "pollview.jsp" method = "post">
+<form action = "pollview.jsp" id="restservice" method = "post">
 	
-	<div id="restservice">
-	
-			
-	</div>
+	<p> TEST </p>
 	
 </form>
 	
