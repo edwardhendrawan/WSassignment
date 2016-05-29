@@ -21,7 +21,7 @@
 %>
 <title>Response Page</title>
 </head>
-<body style="background-color: lightblue; text-align: center;padding: 2">
+<body style="background-color: lightblue; text-align: center;padding: 5%">
 	<% if(selections.isEmpty()){%>
 	No time was selected:
 	<form method="post" action="pollview.jsp">
@@ -34,7 +34,7 @@
 		currentMeetings.getMeetingbyID(i).getResponses().addResponse(name);
 	}
 		%>
-			Successful Submission<br>
+			<h3>Successful Submission</h3>
 	<form method="post" action="pollview.jsp">
 		<input type="hidden" name="poll" value="<%=current.getId()%>">
 		<button type="submit">Return to Poll</button>

@@ -21,13 +21,13 @@
 %>
 
 
-<title>Main</title>
+<title>Homepage</title>
 
 
 </head>
 <body style="background-color: lightblue; text-align: center">
 
-	<h1>Main</h1>
+	<h1>Home Page</h1>
 
 <br>
 <form method="get" action="login.jsp">

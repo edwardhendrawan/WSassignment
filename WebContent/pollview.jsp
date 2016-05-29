@@ -102,7 +102,7 @@ ul {
 		if (user == null) {
 	%>
 	<form method="get" action="submitResponse.jsp">
-		<h3>Choose available Times</h3>
+		<h3><u>Choose available times</u></h3>
 		<table align="center" cellpadding="5">
 			<tr>
 				<th>Meetings Times:</th>
@@ -127,7 +127,7 @@ ul {
 			</tr>
 		</table>
 		<input type="hidden" name="currentPoll" value="<%=current.getId()%>">
-		<button type="submit" >Submit!</button>
+		<button type="submit" >Submit</button>
 	</form>
 	<%
 		}
