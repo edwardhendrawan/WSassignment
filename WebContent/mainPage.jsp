@@ -3,7 +3,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="WebContent/CSS/mainPage.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <jsp:useBean id="webApp" class="uts.wsd.assign.WebApplication"
 	scope="application">
@@ -24,8 +23,7 @@
 
 
 </head>
-<!-- style="background-color: lightblue; text-align: center" -->
-<body> 
+<body style="background-color: lightblue; text-align: center"> 
 
 	<h1>Main</h1>
 
