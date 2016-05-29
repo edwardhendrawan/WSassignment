@@ -21,9 +21,6 @@
 
 
 <title>Main</title>
-<%
-
-%>
 
 
 </head>
@@ -52,15 +49,16 @@
 		<%}%>
 		<br><input type="submit" value="View Poll" /> 
 
-	
 		<%} else {%>
 		There are no polls
 		<%}%>
 	</form>
 
-<form action = "pollview.jsp" id="restservice" method = "post">
-	
+<form action = "pollview.jsp" method = "post">
+
+	<div id="restservice">
 	<p> TEST </p>
+	</div>
 	
 </form>
 	
