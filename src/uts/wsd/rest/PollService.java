@@ -12,8 +12,8 @@ public class PollService
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	
-	public int getAllOpenPolls() 
+	public String getAllOpenPolls() 
 	{
-		return 0;
+		return "Rest Polls here";
 	}
 }
