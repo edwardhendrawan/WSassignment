@@ -71,4 +71,14 @@ public class Responses {
         return this.response;
     }
 
+	public Responses(List<String> response) {
+		super();
+		this.response = new ArrayList<String>();
+	}
+
+	public Responses() {
+		// TODO Auto-generated constructor stub
+	}
+    
+
 }

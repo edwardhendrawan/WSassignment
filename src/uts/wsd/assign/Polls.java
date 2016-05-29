@@ -149,4 +149,12 @@ public class Polls {
 		}
 		return temp;
 	}
+	
+	public void addPoll(Poll p){
+		poll.add(p);
+	}
+	public int getNextID(){
+		int i = poll.size();
+		return i+1;
+	}
 }

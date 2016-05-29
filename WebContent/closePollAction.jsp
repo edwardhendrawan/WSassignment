@@ -8,7 +8,7 @@
 </jsp:useBean>
 <%
 	User user = (User) session.getAttribute("user");
-	Polls polls = (Polls) session.getAttribute("polls");
+	Polls polls = webApp.getPolls();
 	String filePath = application.getRealPath("WEB-INF/polls.xml");
 
 	String numberPoll = request.getParameter("currentPoll");

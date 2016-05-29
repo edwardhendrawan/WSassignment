@@ -97,7 +97,7 @@ public class Poll implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Poll(String title, int state, int userID , String dateCreated, String location, String description){
+	public Poll(String title, int state, int userID , String dateCreated, String location, String description, int id){
 		super();
 		this.title = title;
 		this.state = state;
@@ -105,6 +105,9 @@ public class Poll implements Serializable {
 		this.datecreated = dateCreated; 
 		this.location = location; 
 		this.description = description; 
+		this.meetings= new Meetings();
+		this.id = id;
+		
 	}
 	
 	/**
@@ -281,6 +284,9 @@ public class Poll implements Serializable {
 	public String toString() {
 		return getActualState() + "\n" + "\n Date Created:" + datecreated + "\n Location:" + location
 				+ "\n" + description ;
+	}
+	public void addMeeting(String time,String date,int option){
+		meetings.addMeeting(new Meeting(time, date, option));
 	}
 
 }

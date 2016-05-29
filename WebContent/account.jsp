@@ -13,7 +13,6 @@
 	String filePath = application.getRealPath("WEB-INF/polls.xml");
 	webApp.setLoadPolls(filePath);
 	Polls polls = webApp.getPolls();
-	session.setAttribute("polls", polls);
 	List<Poll> test = polls.fetchUserPolls(user.getID());
 
 %>

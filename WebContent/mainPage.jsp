@@ -10,8 +10,10 @@
 
 <%
 	
-	String filePath = application.getRealPath("WEB-INF/polls.xml");
-	webApp.setLoadPolls(filePath);
+	String pollPath = application.getRealPath("WEB-INF/polls.xml");
+	String userPath = application.getRealPath("WEB-INF/users.xml");	
+	webApp.setLoadPolls(pollPath);
+	webApp.setLoad(userPath);
 	Polls polls = webApp.getPolls();
 	session.setAttribute("polls", polls);
 	List<Poll> test = polls.fetchOpenPolls();
@@ -20,9 +22,6 @@
 
 
 <title>Main</title>
-<%
-
-%>
 
 
 </head>
@@ -39,12 +38,12 @@
 		<%
 			if (!test.isEmpty()) {
 		%>
-		Your polls are:<br>
+		Available polls are:<br>
 		<%
 			for (Poll p : test) {		
 		%>
 
-		<%=p.getTitle()%>  --  <%=p.getUserID() %>
+		<%=p.getTitle()%>  --  <%=webApp.getUsers().getName(p.getUserID()) %>
 		<input type="radio" value="<%=p.getId()%>" <%if(p == test.get(0)){ %> checked="checked" <%}%> name="poll"/><br>
 
 		<%}%>

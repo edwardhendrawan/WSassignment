@@ -23,15 +23,15 @@
 	<table align="center">
 			<tr>
 				<td>Poll Title</td>
-				<td><input type="text" name="title"></td>
+				<td><input type="text" name="title" required></td>
 			</tr>
 			<tr>
 				<td>Location</td>
-				<td><input type="text" name="location"></td>
+				<td><input type="text" name="location" required></td>
 			</tr>
 			<tr>
 				<td>Description</td>
-				<td><input type="text" name="description"></td>
+				<td><input type="text" name="description" required></td>
 			</tr>
 			<tr>
 				<td>Amount of Meeting Times</td>
@@ -40,7 +40,7 @@
   <option value="2">2</option>
   <option value="3">3</option>
   <option value="4">4</option>
-  <option value="4">5</option>
+  <option value="5">5</option>
 </select>
 </td>
 			</tr>
