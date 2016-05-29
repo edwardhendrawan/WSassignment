@@ -123,7 +123,7 @@ ul {
 				<th>Enter Name:</th>
 			</tr>
 			<tr>
-				<td><input type="text" name="yourName" required></td>
+				<td><input type="text" name="yourName" maxlength="30" required></td>
 			</tr>
 		</table>
 		<input type="hidden" name="currentPoll" value="<%=current.getId()%>">

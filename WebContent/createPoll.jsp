@@ -23,15 +23,15 @@
 	<table align="center">
 			<tr>
 				<td>Poll Title</td>
-				<td><input type="text" name="title" required></td>
+				<td><input type="text" name="title" maxlength="30" required></td>
 			</tr>
-			<tr>
+			<tr> 
 				<td>Location</td>
-				<td><input type="text" name="location" required></td>
+				<td><input type="text" name="location" maxlength="30" required></td>
 			</tr>
 			<tr>
 				<td>Description</td>
-				<td><input type="text" name="description" required></td>
+				<td><input type="text" name="description" maxlength="100" required></td>
 			</tr>
 			<tr>
 				<td>Amount of Meeting Times</td>

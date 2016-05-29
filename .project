@@ -33,4 +33,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>WebContent/jquery.js</name>
+			<type>1</type>
+			<location>C:/Users/Lucas/OneDrive/UTS Documents/Web Services Development/WSassignment/WebContent/jquery-2.2.4.js</location>
+		</link>
+	</linkedResources>
 </projectDescription>
