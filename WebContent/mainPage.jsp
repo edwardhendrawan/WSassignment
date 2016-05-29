@@ -24,7 +24,8 @@
 
 
 </head>
-<body style="background-color: lightblue; text-align: center">
+<!-- style="background-color: lightblue; text-align: center" -->
+<body> 
 
 	<h1>Main</h1>
 
