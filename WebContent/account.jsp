@@ -20,11 +20,6 @@
 
 
 <title><%=user.getName()%>'s Account</title>
-<%
-
-%>
-
-
 </head>
 <body style="background-color: lightblue; text-align: center">
 
@@ -32,14 +27,16 @@
 <form method="get" action="logout.jsp">
     <button type="submit">Logout</button>
 </form><br>
-
+	<form method="get" action="createPoll.jsp">
+   <button type="submit">Create Poll</button> <br>
+	</form>
 
 	<form action="pollview.jsp" method="post">
 
 		<%
 			if (!test.isEmpty()) {
 		%>
-		Your polls are:<br>
+		<br> Your polls are:<br>
 		<%
 			for (Poll p : test) {		
 		%>

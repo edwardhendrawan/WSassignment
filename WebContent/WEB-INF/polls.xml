@@ -42,9 +42,33 @@
 		</meetings>
 	</poll>
 		<poll id="3">
-		<title>WSD Meeting 2</title>
-		<state>0</state>
+		<title>WSD Meeting 3</title>
+		<state>1</state>
 		<userID>1</userID>
+		<datecreated>88/88/1996</datecreated>
+		<location>UTS</location>
+		<description>Meeting for ssss</description>
+		<meetings>
+			<meeting option='1'>
+				<time>12:00</time>
+				<date>99/88/1996</date>
+				<responses>
+				</responses>
+			</meeting>
+			<meeting option='2'>
+				<time>12:00</time>
+				<date>99/88/1996</date>
+				<responses>
+					<response>John Doe</response>
+					<response>John Smith</response>
+				</responses>
+			</meeting>
+		</meetings>
+	</poll>
+		<poll id="4">
+		<title>WSD Meeting 1</title>
+		<state>1</state>
+		<userID>2</userID>
 		<datecreated>88/88/1996</datecreated>
 		<location>UTS</location>
 		<description>Meeting for ssss</description>
