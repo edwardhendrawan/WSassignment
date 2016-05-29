@@ -30,7 +30,10 @@
 	%>
 
 	<p>
-		Poll Created. Click <a href="account.jsp">here</a> to go your account.
+						<h3>Poll Created</h3>
+	<form method="post" action="account.jsp">
+		<button type="submit">Return to Account</button>
+	</form>
 	</p>
 
 </body>

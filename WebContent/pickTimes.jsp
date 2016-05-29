@@ -6,6 +6,7 @@
 
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%
 	String filePath = application.getRealPath("WEB-INF/polls.xml");
@@ -14,8 +15,14 @@
 	scope="application">
 </jsp:useBean>
 
+<script type="text/javascript" src="jquery.validate.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$("#dateTime").validator();
+</script>
+
 </head>
-<body style="background-color: lightblue; text-align:center">
+<body style="background-color: lightblue; text-align: center">
 	<%
 		User user = (User) session.getAttribute("user");
 		Polls polls = webApp.getPolls();
@@ -24,37 +31,49 @@
 		String title = request.getParameter("title");
 		String location = request.getParameter("location");
 		String description = request.getParameter("description");
-	    DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-	    Date dateobj = new Date();
-	    String currentdate = df.format(dateobj);
+		DateFormat df = new SimpleDateFormat("dd/MM/yy");
+		Date dateobj = new Date();
+		String currentdate = df.format(dateobj);
 		int userID = user.getID();
-		Poll poll = new Poll(title,1,userID,currentdate,location,description,polls.getNextID());
+		Poll poll = new Poll(title, 1, userID, currentdate, location, description, polls.getNextID());
 		session.setAttribute("poll", poll);
 	%>
-	
-<title>Create Poll</title>
 
+	<title>Create Poll</title>
 </head>
 
 <body style="background-color: lightblue; text-align: center">
-<h1>Create Poll</h1>
+	<h1>Create Poll</h1>
 	<form method="post" action="createPollAction.jsp">
-	<%
-		for (int i = 1; i <= MTimes; i++) {
-	%>
-	<h3>Time - <%=i %></h3>
-	<table align="center">
-	<tr>
+		<%
+			for (int i = 1; i <= MTimes; i++) {
+		%>
+		<h3>
+			Time -
+			<%=i%></h3>
+		<table align="center">
+			<tr>
 				<td>Meeting Date:</td>
-				<td><input type="date" name="mDate<%=i%>" required></td>
+				<td><input type="text" name="mDate<%=i%>" placeholder="---dd/mm/yyyy---" pattern="\d{1,2}/\d{1,2}/\d{4}" required> <script>
+					$(":date").dateinput();
+				</script></td>
+
+
 			</tr>
 			<tr>
 				<td>Meeting Time:</td>
 				<td><input type="time" name="mTime<%=i%>" required></td>
 			</tr>
-	</table>
-<% }%>
-<button type="submit" align="center" value="<%=MTimes%>" name="MTimes">Create Poll</button>
-</form>
+		</table>
+		<%
+			}
+		%>
+		<button type="submit" align="center" value="<%=MTimes%>" name="MTimes">Create
+			Poll</button>
+	</form>
+
+
+
+
 </body>
 </html>

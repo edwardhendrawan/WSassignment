@@ -24,7 +24,10 @@
 <body style="background-color: lightblue; text-align:center">
 <body>
 <p>
-	Poll Closed! Click <a href="account.jsp">here</a> to accounts page.
+				<h3>Poll Closed</h3>
+	<form method="post" action="account.jsp">
+		<button type="submit">Return to Account</button>
+	</form>
 	</p>
 
 </body>
