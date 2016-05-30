@@ -31,17 +31,26 @@ ul {
 </style>
 
 <script type="text/javascript">
-	var checkboxes = $("input[type='checkbox']"), submitButt = $("input[type='submit']");
+	$(function() {
+		$('.chk1').change(function() {
+			if ($(this).is(":checked")) {
+				$('#btnClick').removeAttr('disabled');
+			} else {
+				var isChecked = false;
+				$('.chk1').each(function() {
+					if ($(this).is(":checked")) {
+						$('#btnClick').removeAttr('disabled');
+						isChecked = true;
+					}
+				});
+				if (!isChecked) {
+					$('#btnClick').attr('disabled', 'disabled');
+				}
+			}
 
-	checkboxes.click(function() {
-		submitButt.attr("disabled", !checkboxes.is(":checked"));
+		})
 	});
-
-	$("#name").validate({
-		messages : {
-			name : "Please enter your firstname"
-		}
-	});
+	$("#name").validate();
 </script>
 
 </head>
@@ -151,7 +160,7 @@ ul {
 			</tr>
 		</table>
 		<input type="hidden" name="currentPoll" value="<%=current.getId()%>">
-		<button type="submit" disabled>Submit</button>
+		<button type="submit" id="btnClick" disabled>Submit</button>
 	</form>
 	<%
 		}
