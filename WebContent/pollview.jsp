@@ -31,7 +31,16 @@ ul {
 </style>
 
 <script type="text/javascript">
-	$("#name").validator({
+	var checkboxes = $("input[type='checkbox']"), submitButt = $("input[type='submit']");
+
+	checkboxes.click(function() {
+		submitButt.attr("disabled", !checkboxes.is(":checked"));
+	});
+
+	$("#name").validate({
+		messages : {
+			name : "Please enter your firstname"
+		}
 	});
 </script>
 
@@ -142,7 +151,7 @@ ul {
 			</tr>
 		</table>
 		<input type="hidden" name="currentPoll" value="<%=current.getId()%>">
-		<button type="submit">Submit</button>
+		<button type="submit" disabled>Submit</button>
 	</form>
 	<%
 		}

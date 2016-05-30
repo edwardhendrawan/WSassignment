@@ -7,8 +7,9 @@
 <jsp:useBean id="webApp" class="uts.wsd.assign.WebApplication"
 	scope="application">
 </jsp:useBean>
-<script type="text/javascript" src="jquery.validate.js"></script>
 <script type="text/javascript" src="jquery.js"></script>
+
+<script type="text/javascript" src="jquery.validate.js"></script>
 <%
 	User user = (User) session.getAttribute("user");
 	String filePath = application.getRealPath("WEB-INF/polls.xml");

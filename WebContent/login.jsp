@@ -6,11 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
 <%session.invalidate(); %>
-<script type="text/javascript" src="jquery.validate.js"></script>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript">
-	$("#name").validator();
-</script>
 </head>
 <body style="background-color:lightblue; text-align:center">
 	<h1>Login</h1>
