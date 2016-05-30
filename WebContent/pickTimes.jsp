@@ -15,11 +15,16 @@
 	scope="application">
 </jsp:useBean>
 
-<script type="text/javascript" src="jquery.validate.js"></script>
 <script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript">
-	$("#dateTime").validator();
-</script>
+<script type="text/javascript" src="jquery.timepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery.timepicker.css" />
+<script type="text/javascript" src="lib/bootstrap-datepicker.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="lib/bootstrap-datepicker.css" />
+<link rel="stylesheet" type="text/css"
+	href="lib/bootstrap-datepicker.css" />
+
+
 
 </head>
 <body style="background-color: lightblue; text-align: center">
@@ -31,7 +36,7 @@
 		String title = request.getParameter("title");
 		String location = request.getParameter("location");
 		String description = request.getParameter("description");
-		DateFormat df = new SimpleDateFormat("dd/MM/yy");
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 		Date dateobj = new Date();
 		String currentdate = df.format(dateobj);
 		int userID = user.getID();
@@ -51,20 +56,32 @@
 		<h3>
 			Time -
 			<%=i%></h3>
-		<table align="center">
+
+		<table id="datetime" align="center">
 			<tr>
 				<td>Meeting Date:</td>
-				<td><input type="text" name="mDate<%=i%>" placeholder="---dd/mm/yyyy---" pattern="\d{1,2}/\d{1,2}/\d{4}" required> <script>
-					$(":date").dateinput();
-				</script></td>
-
-
+				<td><input id="date" type="text" class="date"
+					name="mDate<%=i%>" value="<%=currentdate%>" required /></td>
 			</tr>
 			<tr>
 				<td>Meeting Time:</td>
-				<td><input type="time" name="mTime<%=i%>" required></td>
+				<td><input id="time" type="text" class="time"
+					name="mTime<%=i%>" value="11:00am" required /></td>
 			</tr>
 		</table>
+		<script>
+			$(function() {
+				$('#datetime .time').timepicker({
+					'step' : 15,
+					'useSelect' : true
+				});
+				$('#datetime .date').datepicker({
+					'autoclose' : true,
+					'format' : 'd/m/yyyy'
+				});
+			});
+		</script>
+
 		<%
 			}
 		%>
