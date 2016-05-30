@@ -44,10 +44,34 @@ public class SoapPollProxy implements uts.wsd.soap.client.SoapPoll {
     return soapPoll;
   }
   
-  public java.lang.String hello() throws java.rmi.RemoteException{
+  public java.lang.String filterByCreator(int arg0) throws java.rmi.RemoteException{
     if (soapPoll == null)
       _initSoapPollProxy();
-    return soapPoll.hello();
+    return soapPoll.filterByCreator(arg0);
+  }
+  
+  public java.lang.String getPolls() throws java.rmi.RemoteException{
+    if (soapPoll == null)
+      _initSoapPollProxy();
+    return soapPoll.getPolls();
+  }
+  
+  public java.lang.String closePoll() throws java.rmi.RemoteException{
+    if (soapPoll == null)
+      _initSoapPollProxy();
+    return soapPoll.closePoll();
+  }
+  
+  public java.lang.String createPoll() throws java.rmi.RemoteException{
+    if (soapPoll == null)
+      _initSoapPollProxy();
+    return soapPoll.createPoll();
+  }
+  
+  public java.lang.String filterByStatOrResp(java.lang.String arg0) throws java.rmi.RemoteException{
+    if (soapPoll == null)
+      _initSoapPollProxy();
+    return soapPoll.filterByStatOrResp(arg0);
   }
   
   

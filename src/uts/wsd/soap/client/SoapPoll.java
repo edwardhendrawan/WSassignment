@@ -8,5 +8,9 @@
 package uts.wsd.soap.client;
 
 public interface SoapPoll extends java.rmi.Remote {
-    public java.lang.String hello() throws java.rmi.RemoteException;
+    public java.lang.String filterByCreator(int arg0) throws java.rmi.RemoteException;
+    public java.lang.String getPolls() throws java.rmi.RemoteException;
+    public java.lang.String closePoll() throws java.rmi.RemoteException;
+    public java.lang.String createPoll() throws java.rmi.RemoteException;
+    public java.lang.String filterByStatOrResp(java.lang.String arg0) throws java.rmi.RemoteException;
 }
