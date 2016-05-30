@@ -10,8 +10,8 @@
 
 <%session.invalidate(); %>
 					<h3>Logout Successful</h3>
-	<form method="post" action="index.jsp">
-		<button type="submit">Go to Homepage</button>
+	<form method="post" action="login.jsp">
+		<button type="submit">Go to Login</button>
 	</form>
 </body>
 </html>
