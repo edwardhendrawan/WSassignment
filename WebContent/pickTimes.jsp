@@ -49,6 +49,7 @@
 
 <body style="background-color: lightblue; text-align: center">
 	<h1>Create Poll</h1>
+	<!--Loop throguh amount of meeting times and ask for date and time-->
 	<form method="post" action="createPollAction.jsp">
 		<%
 			for (int i = 1; i <= MTimes; i++) {
@@ -69,6 +70,7 @@
 					name="mTime<%=i%>" value="11:00am" required /></td>
 			</tr>
 		</table>
+		
 		<script>
 			$(function() {
 				$('#datetime .time').timepicker({

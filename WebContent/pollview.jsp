@@ -31,26 +31,14 @@ ul {
 </style>
 
 <script type="text/javascript">
-	$(function() {
-		$('.chk1').change(function() {
-			if ($(this).is(":checked")) {
-				$('#btnClick').removeAttr('disabled');
-			} else {
-				var isChecked = false;
-				$('.chk1').each(function() {
-					if ($(this).is(":checked")) {
-						$('#btnClick').removeAttr('disabled');
-						isChecked = true;
-					}
-				});
-				if (!isChecked) {
-					$('#btnClick').attr('disabled', 'disabled');
-				}
-			}
 
-		})
-	});
-	$("#name").validate();
+<!--To enable the submit availability button -->
+
+function myFunction() {
+    document.getElementById("btnClick").disabled = false;
+}
+
+
 </script>
 
 </head>
@@ -93,6 +81,7 @@ ul {
 
 
 
+<!-- Loop through all meeting times -->
 
 	<table align="center" style="border-spacing: 15px;">
 		<tr>
@@ -142,7 +131,7 @@ ul {
 				for (Meeting a : currentMeetings) {
 			%>
 			<tr>
-				<td><input type="checkbox" name="option"
+				<td><input type="checkbox" onclick="myFunction()" name="option"
 					value="<%=a.getOption()%>"> Option <%=a.getOption()%> - <%=a.getDate()%>
 					<%=a.getTime()%><br></td>
 			</tr>
@@ -166,7 +155,7 @@ ul {
 		}
 	%>
 
-
+<!-- Only show close poll when a user is logged in-->
 
 	<%
 		if (user != null) {
@@ -177,7 +166,7 @@ ul {
 	%>
 	<form id="name" method="post" action="closePollAction.jsp">
 		<input type="hidden" name="currentPoll" value="<%=current.getId()%>">
-		<button type="submit">Close Poll</button>
+		<button type="submit" >Close Poll</button>
 
 	</form>
 
