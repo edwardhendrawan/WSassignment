@@ -54,6 +54,48 @@
 		There are no polls
 		<%}%>
 	</form>
+	<div style="width:300px; height: auto; margin:auto; background-color:#fff; float:center;">
+	<h2>Web Services</h2>
+	<form action="rest/pollservice/" method="post">
+		Protocol:<label id=protocolLabel></label>  <br>
+		<input type="button" id="soapButton" value="SOAP" onClick=myFunction/>
+		<script>
+			function myFunction() 
+			{
+	    		document.getElementById("protocolLabel").value = "SOAP";
+			}
+		</script>
+		<input type="button" id="restButton" value="REST" />
+
+		<br>Filter By<br>
+		Creator ID: <input type="text" value="" id="creatorid"/>
+		Status: 		
+			OPEN    <input type="checkbox" id="openCheckBox" checked="checked"/>
+		 	CLOSED  <input type="checkbox" id="closedCheckBox" />
+		
+		<script type="text/javascript">
+			 window.onload = function(){
+			 var openCheckBox = document.getElementById('openCheckBox');
+			 var closedCheckBox = document.getElementById('closedCheckBox');
+			
+			    if (openCheckBox.checked == false)
+			    {
+			    	closedCheckBox.checked = true;
+			    }
+			    else 
+			    {
+			    	closedCheckBox.checked = false;
+			    }
+			 }
+		</script>
+		 
+			 Minimum Responses <input type="checkbox" id="minrespCheckBox"/>
+		<input type="submit" value="View Poll" />
+	</form>
+
+	<form action="pollservice/">
+		
+		</form>
 	
 
 </body>

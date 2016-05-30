@@ -1,50 +1,79 @@
 package uts.wsd.rest;
 import uts.wsd.assign.*;
+
+import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
+import javax.xml.bind.JAXBException;
 
 @Path("/pollservice")  //Regex to help with multiple pathing
 public class PollService 
 {
+	@Context
+	private ServletContext application;
+	
+	private WebApplication getWebApp() throws JAXBException, IOException 
+	{
+		synchronized (application) 
+		{
+			WebApplication webApp = (WebApplication)application.getAttribute("webApp");
+			if (webApp == null) 
+			{
+				webApp = new WebApplication();
+				webApp.save(application.getRealPath("polls.xml"));
+				application.setAttribute("webApp", webApp);
+			}
+			return webApp;
+		}
+	}
+	
 	@GET
 	@Path("openPolls")
-	@Produces(MediaType.TEXT_PLAIN)
-	public String getPolls() 
+	@Produces(MediaType.APPLICATION_XML)
+	public Response getPolls() throws JAXBException, IOException 
 	{
-		return "Return Open Polls here";
+		return Response.status(200).entity(getWebApp().getPolls().fetchOpenPolls())
+				.build();
+
 	}
 	
 	@GET
 	@Path("filter/{creatorid: [0-9]*}")
-	@Produces(MediaType.TEXT_PLAIN)
-	public String filterByCreator (@PathParam("creatorid") int creatorId )
+	@Produces(MediaType.APPLICATION_XML)
+	public Response filterByCreator (@PathParam("creatorid") int creatorId ) throws JAXBException, IOException
 	{
-		return "Creator filtered Polls here";
+		return Response.status(200).entity(getWebApp().getPolls().fetchUserPolls(creatorId))
+				.build();
 	}
 	
 	@GET
 	@Path("filter/{stringfilter: [A-Z]*[a-z]*}")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String filterByStatOrResp (@PathParam("stringfilter") String filter)
+	public Response filterByStatAndResp (@PathParam("stringfilter") String filter) throws JAXBException, IOException
 	{
+		List<Poll> temp;
 		if(filter.equalsIgnoreCase("open"))
 		{
-			return getPolls(); 							//Returns open polls
+			//temp = getPolls(); 							//Returns open polls
 		}
 		else if (filter.equalsIgnoreCase("closed"))
 		{
-			return "All closed polls";
+			temp = getWebApp().getPolls().fetchClosedPolls();
 		}
-		else if(filter.equalsIgnoreCase("minResponses"))
-		{
-			return "all polls that have more than 2 responses";			
-		}
-		else
-		{
-			return "Invalid Inputs";
-		}
+		
+		return (Response) getWebApp().getPolls().fetchOpenPolls();
+//		
+//		if(filter.equalsIgnoreCase("minResponses"))
+//		{
+//			temp = getWebApp().getPolls();			
+//		}
+//		else
+//		{
+//			return "Invalid Inputs";
+//		}
 		
 	}
 }

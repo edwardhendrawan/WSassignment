@@ -152,6 +152,18 @@ public class Polls {
 		return temp;
 	}
 	
+	public List<Poll> fetchClosedPolls() {
+		// For each user in the list...
+		List<Poll> temp = new ArrayList<Poll>();
+		if(poll.isEmpty()) return temp;
+		for (Poll p : poll) {
+			if (p.getState() == 0){
+				temp.add(p);
+			}
+		}
+		return temp;
+	}
+	
 	public void addPoll(Poll p){
 		poll.add(p);
 	}
