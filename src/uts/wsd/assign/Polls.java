@@ -92,7 +92,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "polls")
 public class Polls {
 
-    protected List<Poll> poll;
+    protected List<Poll> poll = new ArrayList<Poll>();;
 
     /**
      * Gets the value of the poll property.
@@ -133,20 +133,30 @@ public class Polls {
 	public List<Poll> fetchUserPolls(int id) {
 		// For each user in the list...
 		List<Poll> temp = new ArrayList<Poll>();
-		for (Poll poll : poll) {
-			if (poll.getUserID()==id)
-				temp.add(poll);
+		if(poll.isEmpty()) return temp;
+		for (Poll p : poll) {
+			if (p.getUserID()==id)
+				temp.add(p);
 		}
 		return temp;
 	}
 	public List<Poll> fetchOpenPolls() {
 		// For each user in the list...
 		List<Poll> temp = new ArrayList<Poll>();
-		for (Poll poll : poll) {
-			if (poll.getState() == 1){
-				temp.add(poll);
+		if(poll.isEmpty()) return temp;
+		for (Poll p : poll) {
+			if (p.getState() == 1){
+				temp.add(p);
 			}
 		}
 		return temp;
+	}
+	
+	public void addPoll(Poll p){
+		poll.add(p);
+	}
+	public int getNextID(){
+		int i = poll.size();
+		return i+1;
 	}
 }

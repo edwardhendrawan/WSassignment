@@ -8,7 +8,7 @@
 </jsp:useBean>
 <%
 	User user = (User) session.getAttribute("user");
-	Polls polls = (Polls) session.getAttribute("polls");
+	Polls polls = webApp.getPolls();
 	String filePath = application.getRealPath("WEB-INF/polls.xml");
 
 	String numberPoll = request.getParameter("currentPoll");
@@ -24,7 +24,10 @@
 <body style="background-color: lightblue; text-align:center">
 <body>
 <p>
-	Poll Closed! Click <a href="account.jsp">here</a> to accounts page.
+				<h3>Poll Closed</h3>
+	<form method="post" action="account.jsp">
+		<button type="submit">Return to Account</button>
+	</form>
 	</p>
 
 </body>

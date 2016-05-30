@@ -42,6 +42,16 @@ public class Users implements Serializable {
 		}
 		return null; // Login incorrect. Return null
 	}
+	
+	public String getName(int id) {
+		// For each user in the list...
+		for (User user : list) {
+			if (user.getID()==id)
+				return user.getName(); // Login correct. Return this user.
+		}
+		return null; // Login incorrect. Return null
+	}
+	
 
 	public boolean checkAlreadyExists(String email) {
 		// For each user in the list...

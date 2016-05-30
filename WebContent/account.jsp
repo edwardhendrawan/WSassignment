@@ -13,7 +13,6 @@
 	String filePath = application.getRealPath("WEB-INF/polls.xml");
 	webApp.setLoadPolls(filePath);
 	Polls polls = webApp.getPolls();
-	session.setAttribute("polls", polls);
 	List<Poll> test = polls.fetchUserPolls(user.getID());
 
 %>
@@ -28,7 +27,7 @@
     <button type="submit">Logout</button>
 </form><br>
 	<form method="get" action="createPoll.jsp">
-   <button type="submit">Create Poll</button> <br>
+   <button type="submit">Create Poll</button> <br><br>
 	</form>
 
 	<form action="pollview.jsp" method="post">

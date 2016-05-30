@@ -13,6 +13,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import java.util.*;
 
 
 /**
@@ -160,4 +161,17 @@ public class Meeting {
         this.option = value;
     }
 
+	public Meeting(String time, String date, Integer option) {
+		super();
+		this.time = time;
+		this.date = date;
+		this.option = option;
+		responses = new Responses();
+	}
+
+	public Meeting() {
+	}
+
+    
+    
 }

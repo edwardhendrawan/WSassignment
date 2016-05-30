@@ -29,7 +29,10 @@
 			session.setAttribute("user", user);
 	%>
 	<p>
-		Login Successful. Click <a href="account.jsp">here</a> to go your account.
+					<h3>Login Successful</h3>
+	<form method="post" action="account.jsp">
+		<button type="submit">Go to Account</button>
+	</form>
 	</p>
 
 
@@ -37,7 +40,10 @@
 		} else {
 	%>
 	<p>
-		Password incorrect. Click <a href="login.jsp">here</a> to try again.
+					<h3>Wrong Email or Password. Try Again.</h3>
+	<form method="post" action="login.jsp">
+		<button type="submit">Go to Back</button>
+	</form>
 	</p>
 	<%
 		}

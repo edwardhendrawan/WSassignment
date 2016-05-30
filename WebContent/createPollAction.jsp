@@ -13,28 +13,27 @@
 %>
 <jsp:useBean id="webApp" class="uts.wsd.assign.WebApplication"
 	scope="application">
-	<jsp:setProperty name="webApp" property="load" value="<%=filePath%>"/>
 </jsp:useBean>
 
 <title>Login</title>
 </head>
 <body style="background-color: lightblue; text-align:center">
 	<%
-		User user = (User) session.getAttribute("user");
-		String title = request.getParameter("title");
-		String location = request.getParameter("location");
-		String description = request.getParameter("description");
-		String password = request.getParameter("meetingDate");
-		String email = request.getParameter("meetingTime");
-		int userID = user.getID();
-		String today = "29/5/2016";
-				// need to add meetings 
-		Poll poll = new Poll(title,1,userID,today,location,description);
+		Poll poll = (Poll) session.getAttribute("poll");
+		String BMTimes = request.getParameter("MTimes");
+		int MTimes = Integer.parseInt(BMTimes);
+		for(int i=1;i<=MTimes;i++){
+			poll.addMeeting(request.getParameter("mTime" + i),request.getParameter("mDate" + i),i);
+		}
+		webApp.getPolls().addPoll(poll);
 		webApp.savePolls(filePath);
 	%>
 
 	<p>
-		Poll Created. Click <a href="account.jsp">here</a> to go your account.
+						<h3>Poll Created</h3>
+	<form method="post" action="account.jsp">
+		<button type="submit">Return to Account</button>
+	</form>
 	</p>
 
 </body>
