@@ -36,7 +36,7 @@
 			</tr>
 			<tr>
 				<td>Location</td>
-				<td><input type="text" name="location" maxlength="30" required></td>
+				<td><input type="text" name="location" minlength="3" maxlength="30" required></td>
 			</tr>
 			<tr>
 				<td>Description</td>
