@@ -7,7 +7,9 @@
 <jsp:useBean id="webApp" class="uts.wsd.assign.WebApplication"
 	scope="application">
 </jsp:useBean>
+<script type="text/javascript" src="jquery.js"></script>
 
+<script type="text/javascript" src="jquery.validate.js"></script>
 <%
 	User user = (User) session.getAttribute("user");
 	String filePath = application.getRealPath("WEB-INF/polls.xml");
@@ -16,38 +18,45 @@
 
 <title>Create Poll</title>
 
+<!-- Validation for fields -->
+<script type="text/javascript">
+	$("#info").validator();
+</script>
+
+
+
 </head>
 <body style="background-color: lightblue; text-align: center">
-<h1>Create Poll</h1>
-	<form method="post" action="pickTimes.jsp">
-	<table align="center">
+	<h1>Create Poll</h1>
+	<form method="post" action="pickTimes.jsp" id="info">
+		<table align="center">
 			<tr>
 				<td>Poll Title</td>
-				<td><input type="text" name="title"></td>
+				<td><input type="text" name="title" minlength="5"
+					maxlength="30" required></td>
 			</tr>
 			<tr>
 				<td>Location</td>
-				<td><input type="text" name="location"></td>
+				<td><input type="text" name="location" minlength="3" maxlength="30" required></td>
 			</tr>
 			<tr>
 				<td>Description</td>
-				<td><input type="text" name="description"></td>
+				<td><input type="text" name="description" minlength="5"
+					maxlength="100" required></td>
 			</tr>
 			<tr>
 				<td>Amount of Meeting Times</td>
 				<td><select name="MTimes">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="4">5</option>
-</select>
-</td>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+				</select></td>
 			</tr>
-			
-		</table>	
-<button type="submit" align="center">Pick meeting times</button>
+
+		</table>
+		<button type="submit" align="center">Pick meeting times</button>
 	</form>
 
 </body>
- 

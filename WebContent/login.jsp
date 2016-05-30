@@ -15,11 +15,11 @@
 			<tbody>
 				<tr> 
 					<td><label for="email">Email</label></td>
-					<td><input type="text" name="email" value=""></input></td>
+					<td><input type="email" name="email" value="" required></input></td>
 				</tr>
 				<tr>
 					<td><label for="password">Password</label></td>
-					<td><input type="password" name="password" value=""></input></td>
+					<td><input type="password" name="password" value="" required></input></td>
 				</tr>
 				<tr>
 					<td><label for=""></label></td>
@@ -30,7 +30,7 @@
 
 	</form>
 
-<br><form method="get" action="mainPage.jsp">
+<br><form method="get" action="index.jsp">
     <button type="submit">Back to Main</button>
 </form><br>
 

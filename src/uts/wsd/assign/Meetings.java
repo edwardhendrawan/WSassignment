@@ -89,6 +89,7 @@ public class Meetings {
      * 
      * 
      */
+    
     public List<Meeting> getMeeting() {
         if (meeting == null) {
             meeting = new ArrayList<Meeting>();
@@ -96,4 +97,21 @@ public class Meetings {
         return this.meeting;
     }
 
+    public Meetings() {
+		super();
+		this.meeting = new ArrayList<Meeting>();
+	}
+
+	public void addMeeting(Meeting m){
+    	meeting.add(m);
+    }
+	
+	public Meeting getMeetingbyID(int ID){
+		for(Meeting m:meeting){
+			if(m.getOption() == ID ){
+				return m;
+			}
+		}
+		return null;
+	}
 }
